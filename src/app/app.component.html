@@ -1,12 +1,15 @@
-<app-header></app-header>
+<app-header
+  (headerTabClicked)="tabClicked($event)"></app-header>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
+    <div *ngIf="tabSelected === 'Recipes'"
+         class="col-xs-12">
       <app-recipes></app-recipes>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12">
+    <div *ngIf="tabSelected === 'Shopping'"
+         class="col-xs-12">
       <app-shopping-list></app-shopping-list>
     </div>
   </div>
